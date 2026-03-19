@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tribus Pet Shop</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+
+    <header>🐶 Caixa Petshop </header>
+
+    <div class="container">
+
+        <div class="cards">
+            <div class="card entrada">Entradas: R$ <span id="totalEntradas">0</span></div>
+            <div class="card saida">Saídas: R$ <span id="totalSaidas">0</span></div>
+            <div class="card saldo">Saldo: R$ <span id="saldo">0</span></div>
+        </div>
+
+        <div class="form">
+            <input type="date" id="data">
+            <input type="text" id="descricao" placeholder="Descrição">
+            <select id="tipo">
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+            </select>
+            <input type="number" id="valor" placeholder="Valor">
+            <button onclick="adicionar()">Adicionar</button>
+        </div>
+
+        <div class="top-bar">
+            <div>
+                <input type="month" id="filtroMes" onchange="atualizarTela()">
+            </div>
+            <div>
+                <button onclick="relatorioDiario()">📅 Diário</button>
+                <button onclick="relatorioMensal()">📊 Mensal</button>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="tabela"></tbody>
+        </table>
+
+    </div>
+
+    <!-- JS -->
+    <script src="src/script.js"></script>
+
+</body>
+
+</html>
